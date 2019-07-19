@@ -1,0 +1,34 @@
+'use strict'
+/**
+ * Module Dependencies
+ */
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+let userSchema = new Schema({
+  userId: {
+    type: String,
+    default: '',
+    index: true,
+    unique: true
+  },
+  firstName: {
+    type: String,
+    default: ''
+  },
+  lastName: {
+    type: String,
+    default: ''
+  },
+  password: {
+    type: String,
+    default: 'passskdajakdjkadsj'
+  },
+  email: {
+    type: String,
+    default: ''
+  }
+})
+
+
+module.exports = mongoose.model('User', userSchema);
